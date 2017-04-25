@@ -1,0 +1,15 @@
+
+<% if(results !== undefined) { %>
+<% results.data.forEach(search => { %>
+  <h5><%= search.name %></h5>
+  <a href="<%= search.resourceURI %>"><img src="<%= search.thumbnail.path%>/portrait_xlarge.jpg"></a>
+  <p><%= search.description %></p>
+  <a href="/favourites/<%= search._id %>">Add to team</a>
+  <% }); %>
+<% } %>
+
+<button type="button" name="button"></button>
+
+<%# http://gateway.marvel.com/v1/comics?ts=1&apikey=1234&hash=ffd275c5130566a2916217b101f26150%>
+
+<a href="/favourites/<%= character._id %>">Add to team</a>

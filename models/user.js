@@ -1,11 +1,11 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-
 const userSchema = new mongoose.Schema({
   username: { type: String },
   email: { type: String, required: true },
-  password: { type: String, required: true}
+  password: { type: String, required: true},
+  character: [{ type: mongoose.Schema.ObjectId, ref: 'Character', unique: true }]
 });
 
 userSchema.pre('save', function hashPassword(next) {
@@ -29,7 +29,5 @@ userSchema.pre('validate', function checkPassword(next) {
 userSchema.methods.validatePassword = function validatePassword(password) {
   return bcrypt.compareSync(password, this.password);
 };
-
-
 
 module.exports = mongoose.model('User', userSchema);

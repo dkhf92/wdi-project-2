@@ -5,7 +5,7 @@ const registrations = require('../controllers/registrations');
 const sessions = require('../controllers/sessions');
 const characters = require('../controllers/characters');
 const comics = require('../controllers/comics');
-const accounts = require('../controllers/accounts');
+const users = require('../controllers/users');
 
 router.get('/', (req, res) => res.render('statics/home'));
 
@@ -22,16 +22,12 @@ function secureRoute(req, res, next) {
 router.route('/characters')
   .get(secureRoute, characters.index);
 
+router.route('/characters/searchresults')
+  .post(characters.search);
+
 router.route('/characters/:id')
   .get(characters.show);
 
-
-router.route('/favourite')
-  .get(secureRoute, characters.favourite);
-// router.route('/characters/favourites')
-//   .get(characters.favourites);
-// router.route('/characters/:id/btn btn-primary')
-//    .get(characters.favourite);
 
 router.route('/register')
   .get(registrations.new)
@@ -48,11 +44,15 @@ router.route('/comics')
   .get(comics.index);
 
 router.route('/comics/:id')
-    .get(comics.show);
+  .get(comics.show);
 
-router.route('/account/:id')
-    .get(secureRoute, accounts.index);
+router.route('/users/:id/:character')
+  .delete(users.deleteCharacter);
 
+router.route('/users/:id')
+  .get(secureRoute, users.show);
 
+router.route('/favourites/:id')
+  .get(secureRoute, users.updateCharacter);
 
 module.exports = router;

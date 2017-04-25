@@ -18,14 +18,17 @@ Comic.collection.drop();
 
 // grabbing api keys
 var marvel = api.createClient({
-  publicKey: process.env.MARVEL_API_PUBLIC,
-  privateKey: process.env.MARVEL_API_PRIVATE
+  publicKey: '20d83b857dd7975d3714f224fb445b28',
+  privateKey: '55029630f5701122fec81d07d7045d8bf4464694'
+  // publicKey: process.env.MARVEL_API_PUBLIC,
+  // privateKey: process.env.MARVEL_API_PRIVATE
 });
 
 // find all characters from Marvel site
 marvel
 .characters
 .findAll(100)
+// .findAll(100)
 .then(characters => {
   // loop through characters name/image/description
   // log the data you recieve from site
@@ -33,7 +36,8 @@ marvel
     return Character.create({
       name: character.name,
       description: character.description,
-      image: character.thumbnail.path || 'no image'
+      image: character.thumbnail.path || 'no image',
+      comic: character.comics
     });
   });
 })
@@ -54,6 +58,20 @@ marvel
 })
 .then(comics => {
   console.log(`${comics.length} comics were created`);
+
+  //   return marvel.characters.findAll(100);
+  // })
+  // .then(characters => {
+  //   return Promise.map(characters.data, (character) => {
+  //     return Character.create({
+  //       name: character.name,
+  //       description: character.description,
+  //       image: character.thumbnail.path || 'no image'
+  //     });
+  //   });
+  // })
+  // .then(characters => {
+  //   console.log(`${characters.length} more characters were created`);
 })
 .fail(console.error)
 .done(() => {

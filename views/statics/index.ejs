@@ -1,7 +1,16 @@
 <h1>Characters</h1>
 
-<ul>
-  <% characters.forEach((character) => { %>
-   <li><a href="/characters/<%=character._id %>"><%= character.name %></a></li>
-  <% }); %>
-</ul>
+<form class="" action="characters/searchresults" method="post">
+<input id="search" type="text" name="searchResults">
+<button type="submit" name="button"></button>
+</form>
+
+  <ul>
+    <% characters.forEach(character => { %>
+      <li>
+      <a href="/characters/<%= character._id %>"><%= character.name %></a>
+      </li>
+      <li>
+      <img src="<%= character.image %>/portrait_small.jpg">
+      <% }); %>
+    </ul>
