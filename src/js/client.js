@@ -1,5 +1,3 @@
-// let button = true;
-
 $(init);
 
 
@@ -7,7 +5,33 @@ function init() {
   $('#searchButton').on('click', searchCharacters);
   $('.characterSubmit').on('click', createCharacters);
 
-  // $('#myNavbar').on('click', toggleButton );
+  if ($('.slick-container').length !== 0) {
+    $('.slick-container').slick({
+      centerMode: true,
+      centerPadding: '60px',
+      slidesToShow: 3,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            arrows: false,
+            centerMode: true,
+            centerPadding: '40px',
+            slidesToShow: 1
+          }
+        }
+      ]
+    });
+  }
 
   function searchCharacters() {
     var searchvalue = $('#search').val();
@@ -26,13 +50,3 @@ function init() {
     $.post(`${window.location.origin}/characters`, { characterObj });
   }
 }
-
-// function toggleButton() {
-//   if (button === true) {
-//     $('myNavbar').show('display');
-//     button = false;
-//   } else {
-//     $('myNavbar').show('display', 'none');
-//     button = true;
-//   }
-// }

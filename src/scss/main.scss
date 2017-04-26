@@ -1,36 +1,27 @@
 @import 'fonts';
 @import 'navbar';
-@import 'carousel';
+@import 'buttons';
+@import 'forms';
+@import 'images';
 
-
+ul {
+  list-style-type: none;
+}
 html, body {
-  font-family: sans-serif;
+  font-family: TradeGothicBold, sans-serif;
   background: #090625;
   height: 100%;
   color: white;
 }
 
-h1,h2,h3,h4,h5,h6 {
+p {
   color: #fff33e;
   font-family: TradeGothicBold;
   text-transform: uppercase;
 }
-
-.btn-primary {
-  background: #f0141e;
-  color: white;
-  text-shadow: none;
-  &:hover {
-    background: #fff33e;
-    color: black;
-  }
-}
-
-.btn {
-  border-radius: 0;
-  border: 0;
+h1,h2,h3,h4,h5,h6 {
+  color: #fff33e;
   font-family: TradeGothicBold;
-  font-size: 1em;
   text-transform: uppercase;
 }
 
@@ -39,4 +30,13 @@ h1,h2,h3,h4,h5,h6 {
   color: #fff33e;
   border: 1px solid #fff33e;
   border-radius: 0;
+}
+
+a {
+  color: #fff33e;
+  font-family: TradeGothicBold;
+  text-transform: uppercase;
+  &:hover {
+    color: #fff33e;
+  }
 }

@@ -4,7 +4,7 @@
   <img src="<%= character.image %>">
   <p><%= character.description %></p>
   <form method="post" action="/users/<%= locals.user.id %>/<%= character.id %>">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete" class="btn btn-danger">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Delete" class="btn btn-danger">
   </form>
-<% }); %>
+  <% }); %>

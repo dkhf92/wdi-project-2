@@ -36,8 +36,7 @@ marvel
     return Character.create({
       name: character.name,
       description: character.description,
-      image: `${character.thumbnail.path}/portrait_xlarge.jpg` || 'no image',
-      comic: character.comics
+      image: `${character.thumbnail.path}/portrait_xlarge.jpg` || 'no image'
     });
   });
 })

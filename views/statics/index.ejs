@@ -1,35 +1,15 @@
 <h1>Characters</h1>
 
-<form class="" action="characters/searchresults" method="post">
-<input id="search" type="text" name="searchResults">
-<button type="submit" name="button"></button>
+<form class="searchForm" action="characters/searchresults" method="post">
+  <input id="search" type="text" name="searchResults" placeholder="Find your favourites">
+  <button type="submit" name="button" class="searchButton">Search</button>
 </form>
 
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-  </ol>
-
-  <!-- Wrapper for slides -->
-  <div class="carousel-inner" role="listbox">
-    <% characters.forEach((character, i ) => { %>
-      <div class="item">
+<div class="slick-container">
+  <% characters.forEach((character) => { %>
+    <div>
+      <img src="<%= character.image %>">
       <a href="/characters/<%= character._id %>"><%= character.name %></a>
-        <img src="<%= character.image %>">
-      </div>
-    <% }); %>
-  </div>
-
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    </div>
+  <% }); %>
 </div>

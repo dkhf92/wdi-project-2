@@ -1,0 +1,54 @@
+.btn-primary {
+  background: #f0141e;
+  color: white;
+  text-shadow: none;
+  &:hover {
+    background: #fff33e;
+    color: black;
+  }
+}
+
+.btn {
+  border-radius: 0;
+  border: 0;
+  font-family: TradeGothicBold;
+  font-size: 1em;
+  text-transform: uppercase;
+}
+
+.characterSubmit {
+  border-radius: 0;
+  border: 0;
+  font-family: TradeGothicBold;
+  font-size: 1em;
+  text-transform: uppercase;
+  background: black;
+  color: #fff33e;
+  border: 1px solid #fff33e;
+  border-radius: 0;
+}
+
+.searchButton {
+  background: black;
+  height: 25px;
+  margin: 2px;
+  border: 1px solid #fff33e;
+  color: #fff33e;
+  &:hover {
+    background: #fff33e;
+    color: black;
+  }
+}
+
+.formButton {
+  background-color: black;
+  height: 30px;
+  width: 65px;
+  margin: 2px ;
+  border: 1px solid #fff33e;
+  color: #fff33e;
+  &:hover {
+    background:#fff33e;
+    color: black;
+  }
+}
