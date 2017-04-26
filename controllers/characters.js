@@ -37,18 +37,32 @@ function charactersShow(req, res) {
 function charactersSearch(req, res) {
   marvel.characters.findNameStartsWith(req.body.searchResults)
   .then(results => {
-    console.log(req.body);
-    // Character
-    // .find()
-    // .exec()
-    // .then(characters => {
-    console.log(results);
+    // console.log(req.body);
+    // console.log(results);
     res.render('characters/searchresults', { results });
   });
+}
+
+// function charactersCreate(req, res) {
+//   Character
+//     .create(req.body)
+//     .then(character => {
+//       // console.log(req.body);
+//       if(!character) return res.render('error', { error: 'No character was created'});
+//       return res.redirect('characters/searchresults');
+//     })
+//     .catch(err => {
+//       return res.render('error', { error: err });
+//     });
+// }
+
+function charactersCreate(req, res) {
+
 }
 
 module.exports = {
   index: charactersIndex,
   show: charactersShow,
-  search: charactersSearch
+  search: charactersSearch,
+  create: charactersCreate
 };

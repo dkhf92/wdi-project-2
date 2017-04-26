@@ -58,20 +58,6 @@ marvel
 })
 .then(comics => {
   console.log(`${comics.length} comics were created`);
-
-  //   return marvel.characters.findAll(100);
-  // })
-  // .then(characters => {
-  //   return Promise.map(characters.data, (character) => {
-  //     return Character.create({
-  //       name: character.name,
-  //       description: character.description,
-  //       image: character.thumbnail.path || 'no image'
-  //     });
-  //   });
-  // })
-  // .then(characters => {
-  //   console.log(`${characters.length} more characters were created`);
 })
 .fail(console.error)
 .done(() => {

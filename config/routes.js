@@ -27,6 +27,18 @@ router.route('/characters/searchresults')
 
 router.route('/characters/:id')
   .get(characters.show);
+  // .post(characters.create);
+
+// route a character from search results page to user profile by clicking add to team button
+// router.route('/users/:id')
+//     .post(characters.create);
+
+router.route('/favourites/:id')
+  .get(users.updateCharacter)
+  .post(characters.create);
+  
+// router.route('/users/:id/:character')
+//   .post(characters.create);
 
 
 router.route('/register')

@@ -24,8 +24,6 @@ function comicsShow(req, res) {
   });
 }
 
-
-
 module.exports = {
   index: comicsIndex,
   show: comicsShow
