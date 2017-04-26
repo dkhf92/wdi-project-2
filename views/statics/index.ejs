@@ -1,22 +1,35 @@
 <h1>Characters</h1>
-<div id="filmCarousel" class="carousel slide bg-faded" data-ride="carousel">
+
+<form class="" action="characters/searchresults" method="post">
+<input id="search" type="text" name="searchResults">
+<button type="submit" name="button"></button>
+</form>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
   </ol>
+
+  <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <% characters.forEach((character, i ) => { %>
-      <img src="<%= character.image %>" style="height:20px; width:20px"></div>
-      <% }); %>
-    </div>
+      <div class="item">
+      <a href="/characters/<%= character._id %>"><%= character.name %></a>
+        <img src="<%= character.image %>">
+      </div>
+    <% }); %>
   </div>
-  <a class="carousel-control-prev" href="#filmCarousel" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#filmCarousel" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
 </div>
