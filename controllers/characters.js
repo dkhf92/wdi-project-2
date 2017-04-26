@@ -1,4 +1,5 @@
 const Character = require('../models/character');
+const User      = require('../models/user');
 const api = require('marvel-api');
 var marvel = api.createClient({
   publicKey: '20d83b857dd7975d3714f224fb445b28',
@@ -43,21 +44,29 @@ function charactersSearch(req, res) {
   });
 }
 
-// function charactersCreate(req, res) {
-//   Character
-//     .create(req.body)
-//     .then(character => {
-//       // console.log(req.body);
-//       if(!character) return res.render('error', { error: 'No character was created'});
-//       return res.redirect('characters/searchresults');
-//     })
-//     .catch(err => {
-//       return res.render('error', { error: err });
-//     });
-// }
-
 function charactersCreate(req, res) {
-
+  console.log(req.body);
+  Character
+  .create({
+    name: req.body.characterObj.name,
+    description: req.body.characterObj.description,
+    image: req.body.characterObj.image
+  })
+  .then(character => {
+    User.findById(res.locals.user._id)
+    .exec()
+    .then(user => {
+      console.log(user);
+      user.character.push(character);
+      return user.save();
+    }).then(user => {
+      if(!character) return res.render('error', { error: 'No character was created'});
+      // return res.redirect(`/users/${res.locals.user._id}`);
+    })
+    .catch(err => {
+      return res.render('error', { error: err });
+    });
+  });
 }
 
 module.exports = {
