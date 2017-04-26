@@ -62,8 +62,24 @@ marvel
   console.log(`${comics.length} comics were created`);
   return Video.create([
     {
-      name: 'something',
-      video: 'YL8uLp-Rqqo'
+      name: 'Guardians of the Galaxy trailer 2',
+      video: 'jQFIu9InG7Q'
+    },
+    {
+      name: 'Hulk vs Thor',
+      video: 'JL2dxGQhtbE'
+    },
+    {
+      name: 'Captain America vs Iron Man',
+      video: 'zG0VMbcwshA'
+    },
+    {
+      name: 'Deadpool',
+      video: 'tLmStxxzhkI'
+    },
+    {
+      name: 'Captain America Civil War | AIRPORT BATTLE - Fight Scenes HD Marvel',
+      video: 'l_-Bn9-zY-Q'
     }
   ])
   .then(videos => {
