@@ -1,17 +1,19 @@
+// let button = true;
+
 $(init);
+
 
 function init() {
   $('#searchButton').on('click', searchCharacters);
   $('.characterSubmit').on('click', createCharacters);
-  // $('#createButton').on('click', createCharacters);
 
+  // $('#myNavbar').on('click', toggleButton );
 
   function searchCharacters() {
     var searchvalue = $('#search').val();
     console.log(searchvalue);
     $.post(`${window.location.origin}/characters/searchresults`, {searchvalue});
   }
-
 
   function createCharacters(e) {
     console.log('clicked!');
@@ -23,5 +25,14 @@ function init() {
     console.log(characterObj);
     $.post(`${window.location.origin}/characters`, { characterObj });
   }
-
 }
+
+// function toggleButton() {
+//   if (button === true) {
+//     $('myNavbar').show('display');
+//     button = false;
+//   } else {
+//     $('myNavbar').show('display', 'none');
+//     button = true;
+//   }
+// }
