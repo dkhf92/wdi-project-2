@@ -6,6 +6,7 @@ const sessions = require('../controllers/sessions');
 const characters = require('../controllers/characters');
 const comics = require('../controllers/comics');
 const users = require('../controllers/users');
+const videos = require('../controllers/videos');
 
 router.get('/', (req, res) => res.render('statics/home'));
 
@@ -54,5 +55,11 @@ router.route('/users/:id')
 
 router.route('/favourites/:id')
   .get(secureRoute, users.updateCharacter);
+
+router.route('/videos')
+  .get(videos.index);
+
+router.route('/videos/:id')
+  .get(videos.show);
 
 module.exports = router;

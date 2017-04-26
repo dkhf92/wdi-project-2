@@ -16,6 +16,9 @@ Character.collection.drop();
 const Comic = require('../models/comic');
 Comic.collection.drop();
 
+const Video = require('../models/video');
+Video.collection.drop();
+
 // grabbing api keys
 var marvel = api.createClient({
   publicKey: '20d83b857dd7975d3714f224fb445b28',
@@ -57,9 +60,20 @@ marvel
 })
 .then(comics => {
   console.log(`${comics.length} comics were created`);
-})
-.fail(console.error)
-.done(() => {
-  // close connection to stop adding stuff
-  mongoose.connection.close();
+  return Video.create([
+    {
+      name: 'something',
+      video: 'YL8uLp-Rqqo'
+    }
+  ])
+  .then(videos => {
+    console.log(`${videos.length} were created`);
+  })
+  .catch(err => {
+    console.log(err);
+  })
+  .finally(() => {
+    // close connection to stop adding stuff
+    mongoose.connection.close();
+  });
 });
