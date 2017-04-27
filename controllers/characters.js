@@ -1,5 +1,6 @@
 const Character = require('../models/character');
 const User      = require('../models/user');
+const Promise   = require('bluebird');
 const api = require('marvel-api');
 var marvel = api.createClient({
   publicKey: '20d83b857dd7975d3714f224fb445b28',
@@ -36,12 +37,26 @@ function charactersShow(req, res) {
 }
 
 function charactersSearch(req, res) {
-  marvel.characters.findNameStartsWith(req.body.searchResults)
+  marvel
+  .characters
+  .findNameStartsWith(req.body.searchResults)
   .then(results => {
     if(results.data.length === 0 ) {
       return res.redirect('/characters');
     }
-    res.render('characters/searchresults', { results });
+    return Promise.map(results.data, (character) => {
+      return Character.findOneOrCreate(character.name, {
+        name: character.name,
+        description: character.description,
+        image: `${character.thumbnail.path}/portrait_xlarge.jpg` || 'no image'
+      });
+    });
+
+  })
+  .then(characters => {
+    // console.log(characters);
+    // res.render('characters/searchresults', { results });
+    res.render('statics/index', { characters });
   })
   .catch(err => {
     return res.render('statics/error', { error: err });
