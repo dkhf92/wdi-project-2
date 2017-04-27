@@ -2,7 +2,8 @@ $(init);
 
 function init() {
   $('#searchButton').on('click', searchCharacters);
-  $('.characterSubmit').on('click', createCharacters, characterAdded);
+  $('.characterSubmit').on('click', createCharacters);
+  $('.characterSubmit').on('click', characterAdded);
 
   function characterAdded() {
     alert('character added to Team');

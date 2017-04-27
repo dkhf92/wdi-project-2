@@ -31,16 +31,24 @@ function charactersShow(req, res) {
     return res.render('characters/show', { character });
   })
   .catch(err => {
-    return res.render('error', { error: err });
+    return res.render('statics/error', { error: err });
   });
 }
 
 function charactersSearch(req, res) {
   marvel.characters.findNameStartsWith(req.body.searchResults)
   .then(results => {
-    // console.log(req.body);
-    // console.log(results);
+    if(!results) {
+      console.log('no results');
+      return res.render('characters');
+      // return res.render('error', { error: 'No character found.'});
+    }
+    console.log('results');
+
     res.render('characters/searchresults', { results });
+  })
+  .catch(err => {
+    return res.render('statics/error', { error: err });
   });
 }
 
@@ -64,7 +72,7 @@ function charactersCreate(req, res) {
       // return res.redirect(`/users/${res.locals.user._id}`);
     })
     .catch(err => {
-      return res.render('error', { error: err });
+      return res.render('statics/error', { error: err });
     });
   });
 }

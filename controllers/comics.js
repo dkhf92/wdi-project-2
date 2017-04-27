@@ -20,7 +20,7 @@ function comicsShow(req, res) {
     return res.render('comics/show', { comic });
   })
   .catch(err => {
-    return res.render('error', { error: err });
+    return res.render('statics/error', { error: err });
   });
 }
 
