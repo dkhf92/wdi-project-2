@@ -42,6 +42,7 @@ function charactersSearch(req, res) {
   .findNameStartsWith(req.body.searchResults)
   .then(results => {
     if(results.data.length === 0 ) {
+      req.flash('danger', 'No characters found.');
       return res.redirect('/characters');
     }
     return Promise.map(results.data, (character) => {
@@ -55,7 +56,6 @@ function charactersSearch(req, res) {
   })
   .then(characters => {
     // console.log(characters);
-    // res.render('characters/searchresults', { results });
     res.render('statics/index', { characters });
   })
   .catch(err => {
