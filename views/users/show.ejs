@@ -2,32 +2,28 @@
   <div id="animateHeader" class="item animated bounceInDown">
     <h1 class="headerUserPage"><%= locals.user.username %>'s Hero Team</h1>
   </div>
-  <% locals.user.character.forEach(character => { %>
-    <h4><%= character.name %></h4>
-    <img src="<%= character.image %>">
-    <p><%= character.description %></p>
+  <div class="slick-container">
+    <% locals.user.character.forEach(character => { %>
+      <h4><%= character.name %></h4><br>
+      <img src="<%= character.image %>"><br>
+      <p><%= character.description %></p><br>
+      <form method="post" action="/users/<%= locals.user.id %>/<%= character.id %>">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete" class="btn btn-danger">
+      </form>
+      <% }); %>
     </div>
-    <form method="post" action="/users/<%= locals.user.id %>/<%= character.id %>">
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Delete" class="btn btn-danger">
-    </form>
-    <% }); %>
-
-
-
-    <%# <div class="item-text">%>
-    <%# <div class="characterInfo">%>
 
 
     <%# SHARE BUTTON FOR FACEBOOOK %>
-    <div id="fb-root"></div>
+    <%# <div id="fb-root"></div>
     <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v2.9";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/nb_NO/sdk.js#xfbml=1&version=v2.9";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
 
 
-    <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Del</a></div>
+  <div class="fb-share-button" data-href="https://developers.facebook.com/docs/plugins/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse">Del</a></div>%>
