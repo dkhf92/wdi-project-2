@@ -38,13 +38,9 @@ function charactersShow(req, res) {
 function charactersSearch(req, res) {
   marvel.characters.findNameStartsWith(req.body.searchResults)
   .then(results => {
-    if(!results) {
-      console.log('no results');
-      return res.render('characters');
-      // return res.render('error', { error: 'No character found.'});
+    if(results.data.length === 0 ) {
+      return res.redirect('/characters');
     }
-    console.log('results');
-
     res.render('characters/searchresults', { results });
   })
   .catch(err => {

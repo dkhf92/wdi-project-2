@@ -3,6 +3,15 @@ p {
   font-family: TradeGothicBold;
   text-transform: uppercase;
 }
+
+.headerUserPage {
+  margin-bottom: 30px;
+}
+.homeHeader {
+    &:hover {
+      background-image: url('https://media.giphy.com/media/FTSF0BjxZIFEs/giphy.gif');
+    }
+}
 h1,h2,h3,h4,h5,h6 {
   color: #fff33e;
   font-family: TradeGothicBold;
@@ -12,10 +21,16 @@ a {
   color: #fff33e;
   font-family: TradeGothicBold;
   text-transform: uppercase;
+  cursor: pointer;
   &:hover {
     color: #fff33e;
   }
 }
+
 ul {
   list-style-type: none;
+}
+
+li {
+  cursor: pointer;
 }

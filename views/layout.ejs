@@ -8,12 +8,15 @@
 </head>
 <% include ./partials/navbar %>
 <body>
-  <main class="container">
-    <% for (const type in messages) { %>
-      <p class="alert alert-<%= type %>"><%= messages[type] %></p>
-    <% } %>
-    <%- body %>
-  </main>
-  <% include ./partials/scripts %>
-</body>
-</html>
+  <div class="wrapper">
+    <main class="container">
+      <% for (const type in messages) { %>
+        <p class="alert alert-<%= type %>"><%= messages[type] %></p>
+        <% } %>
+        <%- body %>
+      </main>
+      <% include ./partials/scripts %>
+    </div>
+  </body>
+  <% include ./partials/footer %>
+  </html>

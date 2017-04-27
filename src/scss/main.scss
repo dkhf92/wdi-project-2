@@ -6,6 +6,7 @@
 @import 'videos';
 @import 'alerts';
 @import 'text';
+@import 'footer';
 
 
 html, body {
@@ -13,4 +14,19 @@ html, body {
   background: #090625;
   height: 100%;
   color: white;
+  margin: 0;
+}
+
+.wrapper {
+  min-height: 100%;
+  margin-bottom: -40px;
+}
+
+.profilePage {
+  text-align: center;
+}
+
+.slick-container {
+  margin-top: 100px;
+  margin-bottom: 0px;
 }
