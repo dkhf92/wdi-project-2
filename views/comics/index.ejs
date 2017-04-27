@@ -1,7 +1,9 @@
 <h1>comics</h1>
 <div class="slick-container">
   <% comics.forEach(comic => { %>
+    <div>
     <h4><a href="/comics/<%=comic._id %>"><%= comic.title %></h4> </br>
     <img src="<%= comic.image %>/portrait_xlarge.jpg">
+    </div>
     <% }); %>
   </div>

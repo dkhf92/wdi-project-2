@@ -4,16 +4,17 @@
   </div>
   <div class="slick-container">
     <% locals.user.character.forEach(character => { %>
-      <h4><%= character.name %></h4><br>
-      <img src="<%= character.image %>"><br>
-      <p><%= character.description %></p><br>
-      <form method="post" action="/users/<%= locals.user.id %>/<%= character.id %>">
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Delete" class="btn btn-danger">
-      </form>
-      <% }); %>
-    </div>
-
+      <div class="text-center">
+        <h4><%= character.name %></h4>
+        <img class="userCharacterImage" src="<%= character.image %>">
+        <p><%= character.description %></p>
+        <form method="post" action="/users/<%= locals.user.id %>/<%= character.id %>">
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Delete" class="btn btn-danger">
+        </form>
+      </div>
+    <% }); %>
+  </div>
 
     <%# SHARE BUTTON FOR FACEBOOOK %>
     <%# <div id="fb-root"></div>

@@ -9,26 +9,6 @@ function init() {
     alert('character added to Team');
   }
 
-  // if($('.slider-container').length !==0) {
-  //   $('.slider-container').slick({
-  //     slidesToShow: 1,
-  //     slidesToScroll: 1,
-  //     arrows: false,
-  //     fade: true,
-  //     asNavFor: '.slider-nav'
-  //   });
-  //   $('.slider-nav').slick({
-  //     slidesToShow: 3,
-  //     slidesToScroll: 1,
-  //     asNavFor: '.slider-container',
-  //     dots: true,
-  //     centerMode: true,
-  //     focusOnSelect: true
-  //   });
-  // }
-
-
-
   if ($('.slick-container').length !== 0) {
     $('.slick-container').slick({
       centerMode: true,

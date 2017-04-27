@@ -8,8 +8,8 @@
 <div class="slick-container">
   <% characters.forEach((character) => { %>
     <div>
+    <a href="/characters/<%= character._id %>"><%= character.name %></a>
       <img src="<%= character.image %>">
-      <a href="/characters/<%= character._id %>"><%= character.name %></a>
     </div>
   <% }); %>
 </div>
