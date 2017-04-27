@@ -3,52 +3,14 @@
 @import 'buttons';
 @import 'forms';
 @import 'images';
+@import 'videos';
+@import 'alerts';
+@import 'text';
 
-ul {
-  list-style-type: none;
-}
+
 html, body {
   font-family: TradeGothicBold, sans-serif;
   background: #090625;
   height: 100%;
   color: white;
-}
-
-p {
-  color: #fff33e;
-  font-family: TradeGothicBold;
-  text-transform: uppercase;
-}
-h1 {
-  text-align: center;
-}
-h1,h2,h3,h4,h5,h6 {
-  color: #fff33e;
-  font-family: TradeGothicBold;
-  text-transform: uppercase;
-}
-
-.alert-info {
-  background: black;
-  color: #fff33e;
-  border: 1px solid #fff33e;
-  border-radius: 0;
-}
-
-a {
-  color: #fff33e;
-  font-family: TradeGothicBold;
-  text-transform: uppercase;
-  &:hover {
-    color: #fff33e;
-  }
-}
-
-
-.video-container {
-  text-align: center;
-}
-
-.video-link {
-  text-align: center;
 }

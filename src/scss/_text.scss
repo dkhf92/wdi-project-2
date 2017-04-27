@@ -1,0 +1,21 @@
+p {
+  color: #fff33e;
+  font-family: TradeGothicBold;
+  text-transform: uppercase;
+}
+h1,h2,h3,h4,h5,h6 {
+  color: #fff33e;
+  font-family: TradeGothicBold;
+  text-transform: uppercase;
+}
+a {
+  color: #fff33e;
+  font-family: TradeGothicBold;
+  text-transform: uppercase;
+  &:hover {
+    color: #fff33e;
+  }
+}
+ul {
+  list-style-type: none;
+}

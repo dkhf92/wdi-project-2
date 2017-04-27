@@ -1,9 +1,12 @@
 $(init);
 
-
 function init() {
   $('#searchButton').on('click', searchCharacters);
-  $('.characterSubmit').on('click', createCharacters);
+  $('.characterSubmit').on('click', createCharacters, characterAdded);
+
+  function characterAdded() {
+    alert('character added to Team');
+  }
 
   if ($('.slick-container').length !== 0) {
     $('.slick-container').slick({

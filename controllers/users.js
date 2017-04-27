@@ -30,7 +30,7 @@ function usersDeleteCharacter(req, res) {
   .findById(res.locals.user.id)
   .exec()
   .then(user => {
-    user.character.pop(req.params.character);
+    user.character.remove(req.params.character);
     return user.save();
   })
   .then(user => res.redirect(`/users/${user._id}`))
