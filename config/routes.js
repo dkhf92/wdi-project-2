@@ -62,4 +62,7 @@ router.route('/videos')
 router.route('/videos/:id')
   .get(videos.show);
 
+router.route('*')
+  .get((req, res) => res.render('statics/error', { error: 'Not found.' }));
+
 module.exports = router;
