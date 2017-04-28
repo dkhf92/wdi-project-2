@@ -2,7 +2,7 @@
 My second project for WDI in London.
 
 
-![](Marvel-homepage.png)
+![](MarvelHomepage.png)
 
 
 Introduction
