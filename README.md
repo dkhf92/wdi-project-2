@@ -1,6 +1,8 @@
 # wdi-project-2
-
 My second project for WDI in London.
+
+
+![](Marvel-homepage.png)
 
 
 Introduction
@@ -13,6 +15,8 @@ This is a link to the website: https://enigmatic-refuge-29546.herokuapp.com/
 
 
 You can watch my code here: https://github.com/dkhf92/wdi-project-2
+
+
 
 
 Project Brief
