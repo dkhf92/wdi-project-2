@@ -10,6 +10,30 @@ This is a link to the website: https://enigmatic-refuge-29546.herokuapp.com/
 
 You can watch my code here: https://github.com/dkhf92/wdi-project-2
 
+<h4>Code</h4>
+
+```
+marvel
+.characters
+.findAll(100)
+.then(characters => {
+  return Promise.map(characters.data, (character) => {
+    return Character.create({
+      name: character.name,
+      description: character.description,
+      image: `${character.thumbnail.path}/portrait_xlarge.jpg` || 'no image'
+    });
+  });
+})
+.then(characters => {
+  console.log(`${characters.length} characters were created`);
+})
+
+```
+
+This is how I search the Marvel database for the first 100 characters. It returns me an array of characters. Then I store the name, description and image into objects.
+
+
 <h4>Project Brief</h4>
 
 Use our six weeks of learning with HTML, CSS and Javascript to create a website.
